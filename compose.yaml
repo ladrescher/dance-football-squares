@@ -1,0 +1,38 @@
+services:
+  app:
+    build: .
+    restart: unless-stopped
+    environment:
+      ADMIN_TOKEN: ${ADMIN_TOKEN:?Set ADMIN_TOKEN in .env}
+      REQUIRE_ADMIN_TOKEN: "1"
+      DATABASE_PATH: /data/board.db
+      PORT: "8000"
+    volumes:
+      - fundraiser_data:/data
+    expose:
+      - "8000"
+    networks:
+      - fundraiser
+  proxy:
+    image: caddy:2
+    restart: unless-stopped
+    depends_on:
+      app:
+        condition: service_healthy
+    environment:
+      DOMAIN: ${DOMAIN:?Set DOMAIN in .env}
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      - fundraiser
+volumes:
+  fundraiser_data:
+  caddy_data:
+  caddy_config:
+networks:
+  fundraiser:

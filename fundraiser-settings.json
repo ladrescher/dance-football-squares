@@ -1,0 +1,19 @@
+{
+  "organizer": "Sam Smith School of Dance",
+  "contact": "",
+  "price": 20.0,
+  "venmo": "Leanne-Drescher",
+  "payment": "Payments can be made to Leanne Drescher through the provided Venmo. If you are unable to pay through Venmo please provide payment to the parents of the dancer you are supporting so that they may remit it to Leanne.",
+  "rules": "Payouts are as follow:\n$100 - 1st Quarter\n$300 - Halftime\n$100 - 3rd Quarter\n$500 - Final",
+  "game": "Buffalo Bills vs. Kansas City Chiefs \u2022 Thanksgiving",
+  "opponent": "Kansas City Chiefs",
+  "fundraiserHeading": "Thanksgiving Football Squares",
+  "homeTeam": "Buffalo Bills",
+  "boardMessage": "Once a board has been sold out numbers will be drawn and a new board will be added to purchase squares",
+  "homeColor": "#00338d",
+  "awayColor": "#e31837",
+  "open": true,
+  "rows": null,
+  "cols": null,
+  "cancelled": false
+}
